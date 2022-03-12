@@ -11,12 +11,14 @@ interface LayoutProps {
 
 export default function Layout (props: LayoutProps) {
     return (
-        <>
+        <div className="dark flex h-screen w-screen">
             <SettingsPage />
-            <Header title={props.title} subTitle={props.subTitle}/>
-            <Content>
-                {props.children}
-            </Content>
-        </>
+            <div className="flex flex-col w-full p-7 dark: bg-gray-800 bg-gray-300">
+                <Header title={props.title} subTitle={props.subTitle}/>
+                <Content>
+                    {props.children}
+                </Content>
+            </div>
+        </div>
     )
 }
